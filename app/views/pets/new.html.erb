@@ -1,2 +1,14 @@
-<h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
+<div class="container">
+  <%= simple_form_for([current_user, @pet]) do |f| %>
+    <div class="form-group">
+      <%= f.input :name, class: 'form-control' %>
+      <!-- <%= f.association #:species %> -->
+      <%= f.input :species, class: 'form-control' %>
+      <%= f.input :age, class: 'form-control' %>
+      <%= f.input :price_per_day, class: 'form-control' %>
+      <%= f.input :category, class: 'form-control' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
