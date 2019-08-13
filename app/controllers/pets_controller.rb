@@ -14,6 +14,11 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
+  def show
+    @pet = Pet.find(params[:id])
+    @booking = Booking.new
+  end
+
   private
 
   def pet_params

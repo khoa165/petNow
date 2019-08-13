@@ -10,6 +10,7 @@
             <li><%= pet.species %></li>
             <li><%= pet.age %></li>
           </ul>
+          <%= link_to "Details", pet_path(pet) %>
         </div>
       </div>
     <% end %>
