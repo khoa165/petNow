@@ -1,4 +1,6 @@
 class Pet < ApplicationRecord
+
+  CATEGORIES = ["Domestic Animals", "Exotic Animals", "Mythical Creatures", "Aquatic Animals", "Insects"]
   belongs_to :user
   has_many :bookings
   has_many :users, through: :booking

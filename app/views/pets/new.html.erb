@@ -3,12 +3,11 @@
     <%= simple_form_for(@pet) do |f| %>
       <div class="form-group">
         <%= f.input :name, class: 'form-control' %>
-        <%= f.input :species, class: 'form-control' %>
-        <%= f.input :age, class: 'form-control' %>
-        <%= f.input :price_per_day, class: 'form-control' %>
-        <%= f.input :category, class: 'form-control' %>
+      <%= f.input :category, collection: Pet::CATEGORIES, prompt: "Choose", class: 'form-control' %>
+      <%= f.input :species, class: 'form-control' %>
+      <%= f.input :age, class: 'form-control' %>
+      <%= f.input :price_per_day, class: 'form-control' %>
       </div>
-
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>

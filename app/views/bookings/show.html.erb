@@ -1,0 +1,17 @@
+<div class="booking-card mx-auto my-4 py-3">
+  <div class="row align-items-md-start justify-content-between">
+    <div class="col-md-3 pet-image my-md-4" align="center">
+      <%= cl_image_tag @booking.pet.photo, height: 300, width: 400, crop: :fill %>
+      <!-- <img class="project-img mx-md-4 mx-lg-0" src="images/buddies.svg" alt="project image"> -->
+    </div>
+    <div class="col-md-9 booking-info mt-4">
+      <div class="mx-4 ml-lg-0">
+        <h3 class="booking-pet">Your new buddy: <%= @booking.pet.name %></h3>
+        <p class="booking-pet-category mt-3">Species: <%= @booking.pet.species %>&emsp;Category: <%= @booking.pet.category %></p>
+        <p class="booking-date mt-3">Start date: <%= @booking.start_date %></p>
+        <p class="booking-date mt-3">End date: <%= @booking.end_date %></p>
+        <p class="booking-date mt-3">Total: <%= @booking.total_price %></p>
+      </div>
+    </div>
+  </div>
+</div>

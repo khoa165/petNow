@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_action :set_pet, only: [:show]
+
   def index
     @pets = Pet.where(user: current_user)
   end
@@ -8,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new(pet_params)
+    @pet = Pet.new(pet_strong_params)
     @pet.user = current_user
     @pet.save
     redirect_to pets_path
@@ -38,7 +40,11 @@ class PetsController < ApplicationController
 
   private
 
-  def pet_params
+  def pet_strong_params
     params.require(:pet).permit(:name, :species, :price_per_day, :age, :category)
+  end
+
+  def set_pet
+    @pet = Pet.find(params[:id])
   end
 end
