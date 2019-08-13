@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class PetsController < ApplicationController
   def index
     @pets = Pet.all
