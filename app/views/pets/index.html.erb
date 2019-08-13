@@ -1,19 +1,30 @@
-<h1 class="text-center mt-3"><%= current_user.email %>'s pets</h1>
+
 <div class="container">
+  <div class="d-flex justify-content-between align-items-center px-4">
+    <h1 class="text-center mt-3 font-weight-bold"><%= current_user.email %>'s pets</h1>
+    <%= link_to "Add pet", new_pet_path, class: 'btn button text-white mr-3' %>
+  </div>
+
   <div class="row p-4">
     <% @pets.each do |pet| %>
       <div class="col-4">
-        <div class="card p-3 mt-2">
+        <div class="card p-3 mt-2 text-dark">
           <img src="https://picsum.photos/200/200" alt="">
           <ul class="list-unstyled mt-2">
-            <li>Name: <%= pet.name %></li>
+            <li><h4 class="font-weight-bold"><%= pet.name %></h4></li>
             <li>Species: <%= pet.species %></li>
             <li>Age: <%= pet.age %></li>
           </ul>
-          <div class="d-flex justify-content-between">
-            <%= link_to "Details", pet_path(pet), class: 'text-success' %>
-            <%= link_to "Edit", edit_pet_path(pet), class: 'text-warning' %>
-            <%= link_to "Delete", pet_path(pet), method: :delete, class: 'text-danger' %>
+          <div class="d-flex justify-content-end">
+            <%= link_to pet_path(pet), class: 'text-success' do %>
+              <i class="fas fa-info-circle"></i>
+            <% end %>
+            <%= link_to edit_pet_path(pet), class: 'text-warning mx-3' do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to pet_path(pet), method: :delete, class: 'text-danger' do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
           </div>
         </div>
       </div>
