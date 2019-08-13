@@ -1,0 +1,16 @@
+<div class="container p-4 text-center">
+  <h2><%= @pet.name %></h2>
+  <p>Age: <%= @pet.age %></p>
+  <p>Species: <%= @pet.species %></p>
+</div>
+
+<div class="container text-center bg-dark text-white p-3">
+  <%= simple_form_for([@pet, @booking]) do |f| %>
+    <div class="form-group">
+      <%= f.input :start_date, class: 'form-control' %>
+      <%= f.input :end_date, class: 'form-control' %>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
