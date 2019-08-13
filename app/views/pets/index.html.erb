@@ -10,7 +10,11 @@
             <li>Species: <%= pet.species %></li>
             <li>Age: <%= pet.age %></li>
           </ul>
-          <%= link_to "Details", pet_path(pet), class: 'btn btn-sm font-weight-bold button' %>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Details", pet_path(pet), class: 'text-success' %>
+            <%= link_to "Edit", edit_pet_path(pet), class: 'text-warning' %>
+            <%= link_to "Delete", pet_path(pet), method: :delete, class: 'text-danger' %>
+          </div>
         </div>
       </div>
     <% end %>
