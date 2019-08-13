@@ -14,7 +14,7 @@ categories = ["Domestic Animals", "Exotic Animals", "Mythical Creatures", "Aquat
 
 User.create!(email: "asdfg@gmail.com", password: "helloworld")
 
-5.times do
+10.times do
   Pet.create!(
     name: Faker::Name.name,
     category: categories.sample,
