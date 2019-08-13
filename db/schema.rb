@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_08_13_091750) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.integer "total_price"
     t.bigint "user_id"
     t.bigint "pet_id"

@@ -11,10 +11,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_strong_params)
     @booking.user = current_user
-    @booking.pet = Pet.find(params[:pet_id])
+    @pet = Pet.find(params[:pet_id])
+    @booking.pet = @pet
+    # raise
+    # puts "#{@booking.errors.messages}"
     if @booking.save
       redirect_to bookings_path
     else
+      puts "failed"
       @booking = Booking.new
       render "pets/show"
     end
@@ -40,7 +44,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_strong_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking

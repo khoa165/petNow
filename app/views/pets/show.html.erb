@@ -7,8 +7,10 @@
 <div class="container text-center bg-dark text-white p-3">
   <%= simple_form_for([@pet, @booking]) do |f| %>
     <div class="form-group">
-      <%= f.input :start_date, class: 'form-control' %>
-      <%= f.input :end_date, class: 'form-control' %>
+      <%= f.input :start_date, as: :date, html5: true, class: 'form-control' %>
+      <%= f.input :end_date, as: :date, html5: true, class: 'form-control' %>
+      <!-- <#%= f.input :start_date, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month, start_day: Date.today.mday, order: [:day, :month, :year]%>
+      <#%= f.input :end_date, default: Date.today + 1, as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, start_month: Date.today.month , order: [:day, :month, :year]%> -->
     </div>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
