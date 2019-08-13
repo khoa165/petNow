@@ -8,6 +8,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.integer :avaerage_rating
       t.integer :age
       t.integer :price_per_day
+      t.string :photo
 
       t.timestamps
     end

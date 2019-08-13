@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-6 offset-3">
+      <%= simple_form_for [@pet, @booking] do |f| %>
+        <div class="form-group">
+          <%= f.input :start_date, class: 'form-control' %>
+          <%= f.input :end_date, class: 'form-control' %>
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
