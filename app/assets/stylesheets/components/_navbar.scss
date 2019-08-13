@@ -1,10 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: Montserrat;
+  font-size: 20px;
 }
 
-.navbar-lewagon > i {
-   font-size: 40px;
+.navbar-log {
+  display: flex
 }
 
 .navbar-lewagon .navbar-collapse {
