@@ -1,16 +1,20 @@
-<h1>Pets#index</h1>
-<p>Find me in app/views/pets/index.html.erb</p>
+<h1 class="text-center mt-3"><%= current_user.email %>'s pets</h1>
 <div class="container">
-  <div class="row">
+  <div class="row p-4">
     <% @pets.each do |pet| %>
       <div class="col-4">
-        <div class="card p-3">
-          <ul class="list-unstyled">
-            <li><%= pet.name %></li>
-            <li><%= pet.species %></li>
-            <li><%= pet.age %></li>
+        <div class="card p-3 mt-2">
+          <img src="https://picsum.photos/200/200" alt="">
+          <ul class="list-unstyled mt-2">
+            <li>Name: <%= pet.name %></li>
+            <li>Species: <%= pet.species %></li>
+            <li>Age: <%= pet.age %></li>
           </ul>
-          <%= link_to "Details", pet_path(pet) %>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Details", pet_path(pet), class: 'text-success' %>
+            <%= link_to "Edit", edit_pet_path(pet), class: 'text-warning' %>
+            <%= link_to "Delete", pet_path(pet), method: :delete, class: 'text-danger' %>
+          </div>
         </div>
       </div>
     <% end %>
