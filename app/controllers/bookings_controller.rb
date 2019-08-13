@@ -12,8 +12,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_strong_params)
     @booking.user = current_user
     @booking.pet = Pet.find(params[:pet_id])
-    @booking.save
-    redirect_to bookings_path
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render "pets/show"
+    end
   end
 
   def edit
@@ -21,7 +24,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_strong_params)
-    redirect_to booking_path(@booking)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :edit
+    end
   end
 
   def destroy
