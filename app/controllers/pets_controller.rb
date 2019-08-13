@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show]
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
+    @pets = Pet.where(user: current_user)
   end
 
   def new
@@ -16,9 +16,21 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
+  def edit
+  end
+
+  def update
+    @pet.update(pet_strong_params)
+    redirect_to pets_path
+  end
+
   def show
-    @pet = Pet.find(params[:id])
     @booking = Booking.new
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to pets_path
   end
 
   private
