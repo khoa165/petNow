@@ -1,6 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+  <div class="container">
+    <h1>Find a <strong>furry friend</strong> to enjoy your <strong>free time</strong>!</h1>
+    <p>Spend time with a pet without owning one.</p>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control-lg mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+      <button class="btn btn-lg text-white button my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
 
-<% if user_signed_in? %>
-<%= current_user.email %>
-<% end %>
+<div class="container mt-3 mb-3">
+  <br>
+  <% if user_signed_in? %>
+  <%= current_user.email %>
+  <% end %>
+  <br>
+  <br>
+  <h2>Explore #category name</h2>
+  <br>
+  <h2>Explore #category name</h2>
+  <br>
+  <h2>Explore #category name</h2>
+  <br>
+</div>
+
