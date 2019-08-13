@@ -2,20 +2,20 @@
   <div class="container">
     <h1>Find a <strong>furry friend</strong> to enjoy your <strong>free time</strong>!</h1>
     <p>Spent time with a pet without owning one.</p>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control-lg mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+      <button class="btn btn-lg text-white button my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </div>
 
+<div class="container mt-3 mb-3">
+  <h1>Pages#home</h1>>
 
-<div class="container">
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<% if user_signed_in? %>
-<%= current_user.email %>
-<% end %>
+  <% if user_signed_in? %>
+  <%= current_user.email %>
+  <% end %>
 
 
 </div>
 
-
-assets/images/banner_photo_dog.jpg
