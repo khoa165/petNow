@@ -17,8 +17,11 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 <!-- put user type logic here -->
+        <li class="nav-item active">
+          <%= link_to "Search", root_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
-          <%= link_to "Search", "#", class: "nav-link" %>
+          <%= link_to "Pets", pets_path, class: "nav-link" %>
         </li>
           <li class="nav-item">
           <%= link_to "Bookings", "#", class: "nav-link" %>
