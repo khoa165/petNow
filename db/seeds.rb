@@ -1,26 +1,47 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'json'
+require 'open-uri'
 
+puts 'Cleaning database...'
 User.destroy_all
 Pet.destroy_all
+Booking.destroy_all
 
 categories = ["Domestic Animals", "Exotic Animals", "Mythical Creatures", "Aquatic Animals", "Insects"]
 
-User.create!(email: "asdfg@gmail.com", password: "helloworld")
+puts 'Creating users...'
+User.create(first_name: "Khoa", last_name: "Le", email: "khoa@gmail.com", password: "khoa123")
+User.create(first_name: "Danko", last_name: "Beribak", email: "danko@gmail.com", password: "danko123")
+User.create(first_name: "Arman", last_name: "Balani", email: "arman@gmail.com", password: "arman123")
+User.create(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmail.com", password: "melissa123")
+puts User.count
 
-10.times do
-  Pet.create!(
+puts 'Creating pets...'
+20.times do
+  val = rand(1..4)
+  if val == 1 # Fox
+    photo = JSON.parse(open("https://randomfox.ca/floof/").read)["image"]
+    species = "Fox"
+  elsif val == 2 # Dog
+    photo = JSON.parse(open("https://random.dog/woof.json").read)["url"]
+    species = "Dog"
+  elsif val == 3 # Goat
+    photo = "https://placegoat.com/200/200"
+    species = "Goat"
+  elsif val == 4
+    photo = JSON.parse(open("https://aws.random.cat/meow").read)["file"]
+    species = "Cat"
+  end
+  pet = Pet.new(
     name: Faker::Name.name,
     category: categories.sample,
-    species: Faker::Creature::Animal.name,
-    age: rand(1..100),
-    price_per_day: rand(1..100),
-    user_id: 1
+    age: rand(1..20),
+    price_per_day: rand(10..50),
+    species: species,
+    photo: photo
   )
+  pet.user = User.all.sample
+  pet.save!
 end
+
+puts "Finished..."
