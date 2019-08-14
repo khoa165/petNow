@@ -14,9 +14,9 @@ User.create(first_name: "Khoa", last_name: "Le", email: "khoa@gmail.com", passwo
 User.create(first_name: "Danko", last_name: "Beribak", email: "danko@gmail.com", password: "danko123")
 User.create(first_name: "Arman", last_name: "Balani", email: "arman@gmail.com", password: "arman123")
 User.create(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmail.com", password: "melissa123")
-puts User.count
 
 puts 'Creating pets...'
+
 20.times do
   val = rand(1..4)
   if val == 1 # Fox
