@@ -9,7 +9,7 @@
     <% @pets.each do |pet| %>
       <div class="col-sm-4">
         <div class="card p-3 mt-2 text-dark">
-          <%= image_tag pet.photo, height: 200, class: "card-img-top" %>
+          <%= image_tag pet.photo, height: 200, class: "card-img-top my-image"%>
           <ul class="list-unstyled mt-2">
             <li><h4 class="font-weight-bold"><%= pet.name %></h4></li>
             <li>Species: <%= pet.species %></li>
