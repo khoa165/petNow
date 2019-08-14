@@ -32,7 +32,7 @@ puts 'Creating pets...'
     photo = JSON.parse(open("https://aws.random.cat/meow").read)["file"]
     species = "Cat"
   end
-  pet = Pet.create!(
+  pet = Pet.new(
     name: Faker::Name.name,
     category: categories.sample,
     age: rand(1..20),
