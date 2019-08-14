@@ -12,5 +12,4 @@ class Pet < ApplicationRecord
   validates :price_per_day, presence: true
   validates :species, presence: true
   validates :age, presence: true
-  validates :address, presence: true
 end
