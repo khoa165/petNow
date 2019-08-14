@@ -2,12 +2,16 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 70vh;
+}
+
+.banner-lg {
   height: 100vh;
 }
 
 .banner-sm {
-  height: 40vh;
-  background-position: center;
+  height: 30vh;
+  padding: 30px 0;
 }
 
 .banner h1 {
