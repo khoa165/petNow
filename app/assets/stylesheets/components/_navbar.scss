@@ -1,18 +1,18 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-  font-family: Montserrat;
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  line-height: 25px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  transition: background 2s;
+  border-bottom: 1px solid $light-gray;
+}
+
+.navbar-dark.scrolled .navbar-nav .nav-link, .navbar.scrolled .navbar-logo {
+  color: black;
 }
 
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.heart-icon {
-  color: red;
-}
