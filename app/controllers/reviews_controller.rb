@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def pet_reviews
-    @pets = Review.where(pet_id: params[:pet_id])
+    @reviews = Review.where(pet_id: params[:pet_id])
   end
 
   def index
