@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :pets do
     member do                             # member => restaurant id in URL
-      get '/search', to 'pets#search'                         # RestaurantsController#chef
+      get '/search', to: 'pets#search'                         # RestaurantsController#chef
     end
 
     resources :bookings, only: [:create]
