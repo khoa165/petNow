@@ -1,6 +1,6 @@
 <div class="container p-4 text-center">
   <div class="row">
-    <%= image_tag @pet.photo, height: 300, class: "col-sm-8 my-image" %>
+    <%= cl_image_tag @pet.photo, height: 300, class: "col-sm-8 my-image" %>
     <div class="col-sm-4 bg-secondary text-white">
       <h2 class="font-weight-bold mt-5" style="object-fit: cover"><%= @pet.name %></h2>
       <p>Age: <%= @pet.age %></p>
@@ -8,6 +8,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div class="container">
   <div class="row">
