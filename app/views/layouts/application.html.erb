@@ -10,7 +10,11 @@
     <!-- <%#= stylesheet_pack_tag 'application', media: 'all' %> -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% if params[:controller] == "pages" || (params[:controller] == "pets" && params[:action] == "index") %>
+      <%= render 'shared/navbar' %>
+    <% else %>
+      <%= render 'shared/basic_navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
