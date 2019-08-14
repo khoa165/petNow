@@ -1,5 +1,9 @@
 class Pet < ApplicationRecord
+  # Constant.
   CATEGORIES = ["Domestic Animals", "Exotic Animals", "Mythical Creatures", "Aquatic Animals", "Insects"]
+
+  # Set up image uploader for pet.
+  mount_uploader :photo, PhotoUploader
 
   # Associations.
   belongs_to :user
