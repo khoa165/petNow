@@ -38,8 +38,8 @@ puts 'Creating pets...'
     age: rand(1..20),
     price_per_day: rand(10..50),
     species: species,
-    photo: photo
   )
+  pet.remote_photo_url = photo
   pet.user = User.all.sample
   pet.save!
 end
