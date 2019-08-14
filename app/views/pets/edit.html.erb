@@ -1,16 +1,19 @@
 <div class="container">
-  <div class="col-6 offset-3 bg-secondary text-white text-center p-3 my-3">
-    <%= simple_form_for(@pet) do |f| %>
-      <div class="form-group">
-        <%= f.input :name, class: 'form-control' %>
-        <%= f.input :species, class: 'form-control' %>
-        <%= f.input :age, class: 'form-control' %>
-        <%= f.input :price_per_day, class: 'form-control' %>
-        <%= f.input :category, class: 'form-control' %>
-      </div>
-
-      <%= f.submit class: 'btn button text-white' %>
-    <% end %>
+  <div class="row">
+    <div class="col-6 offset-3 bg-secondary text-white p-3 my-3">
+      <%= simple_form_for(@pet) do |f| %>
+        <div class="form-group">
+          <%= f.input :name, class: 'form-control' %>
+          <%= f.input :species, class: 'form-control' %>
+          <%= f.input :age, class: 'form-control' %>
+          <%= f.input :price_per_day, class: 'form-control' %>
+          <%= f.input :category, class: 'form-control' %>
+        </div>
+        <div class="text-center">
+          <%= f.submit class: 'btn button text-white' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
