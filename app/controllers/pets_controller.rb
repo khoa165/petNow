@@ -5,6 +5,11 @@ class PetsController < ApplicationController
     @pets = Pet.where(user: current_user)
   end
 
+  def search
+    species = params[:species].downcase.capitalize
+    @pets = Pet.where(species: species)
+  end
+
   def new
     @pet = Pet.new
   end
