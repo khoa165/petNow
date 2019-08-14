@@ -18,6 +18,8 @@ User.create(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmai
 puts 'Creating pets...'
 
 20.times do
+  photo = ""
+  species = ""
   val = rand(1..4)
   if val == 1 # Fox
     photo = JSON.parse(open("https://randomfox.ca/floof/").read)["image"]
@@ -37,7 +39,7 @@ puts 'Creating pets...'
     category: categories.sample,
     age: rand(1..20),
     price_per_day: rand(10..50),
-    species: species,
+    species: species
   )
   pet.remote_photo_url = photo
   pet.user = User.all.sample
