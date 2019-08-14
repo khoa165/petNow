@@ -1,18 +1,37 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-  font-family: Montserrat;
-}
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+//   font-family: Montserrat;
+// }
 
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 22px;
+  line-height: 25px;
+  padding: 5px 10px;
+  transition: 0.5s;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar.scrolled {
+  background-color: white;
+  transition: background 2s;
 }
 
-.heart-icon {
-  color: red;
+.navbar-dark.scrolled .navbar-nav .nav-link {
+  color: black;
 }
+
+.navbar.scrolled {
+  transition: background 2s;
+  border-bottom: 1px solid $light-gray;
+}
+
