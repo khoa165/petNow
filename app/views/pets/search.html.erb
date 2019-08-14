@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row p-4">
+    <% @pets.each do |pet| %>
+      <div class="col-sm-4">
+        <div class="card p-3 mt-2 text-dark">
+          <%= cl_image_tag pet.photo, height: 200, class: "card-img-top my-image"%>
+          <ul class="list-unstyled mt-2">
+            <li><h4 class="font-weight-bold"><%= pet.name %></h4></li>
+            <li>Species: <%= pet.species %></li>
+            <li>Age: <%= pet.age %></li>
+          </ul>
+          <div class="d-flex justify-content-end">
+            <%= link_to pet_path(pet), class: 'text-success' do %>
+              <i class="fas fa-info-circle"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+   </div>
+</div>
+

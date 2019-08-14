@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_153159) do
     t.integer "age"
     t.integer "price_per_day"
     t.string "photo"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pets_on_user_id"

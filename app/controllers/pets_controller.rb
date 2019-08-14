@@ -5,6 +5,11 @@ class PetsController < ApplicationController
     @pets = Pet.where(user: current_user)
   end
 
+  def search
+    species = params[:species].downcase.capitalize
+    @pets = Pet.where(species: species)
+  end
+
   def new
     @pet = Pet.new
   end
@@ -36,7 +41,7 @@ class PetsController < ApplicationController
   private
 
   def pet_strong_params
-    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category)
+    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category, :photo)
   end
 
   def set_pet

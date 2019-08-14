@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/pets/search', to: 'pets#search'
   resources :pets do
     resources :bookings, only: [:create]
     resources :reviews, only: [:pet_reviews]
