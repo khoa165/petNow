@@ -1,15 +1,24 @@
 <div class="container p-4 text-center">
-  <h2><%= @pet.name %></h2>
-  <p>Age: <%= @pet.age %></p>
-  <p>Species: <%= @pet.species %></p>
+  <div class="row">
+    <%= image_tag @pet.photo, height: 300, class: "col-sm-8 my-image" %>
+    <div class="col-sm-4 bg-secondary text-white">
+      <h2 class="font-weight-bold mt-5" style="object-fit: cover"><%= @pet.name %></h2>
+      <p>Age: <%= @pet.age %></p>
+      <p>Species: <%= @pet.species %></p>
+    </div>
+  </div>
 </div>
 
-<div class="container text-center bg-dark text-white p-3">
-  <%= simple_form_for([@pet, @booking]) do |f| %>
-    <div class="form-group">
-      <%= f.input :start_date, as: :date, html5: true, class: 'form-control' %>
-      <%= f.input :end_date, as: :date, html5: true, class: 'form-control' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-3 text-center bg-secondary text-white mb-3 p-3">
+      <%= simple_form_for([@pet, @booking]) do |f| %>
+        <div class="form-group">
+          <%= f.input :start_date, as: :date, html5: true, class: 'form-control' %>
+          <%= f.input :end_date, as: :date, html5: true, class: 'form-control' %>
+        </div>
+        <%= f.submit class: 'btn button text-white' %>
+      <% end %>
     </div>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+  </div>
 </div>

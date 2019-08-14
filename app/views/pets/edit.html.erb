@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-6 offset-3 bg-secondary p-3 mb-3">
+  <div class="col-6 offset-3 bg-secondary text-white text-center p-3 my-3">
     <%= simple_form_for(@pet) do |f| %>
       <div class="form-group">
         <%= f.input :name, class: 'form-control' %>
@@ -9,7 +9,7 @@
         <%= f.input :category, class: 'form-control' %>
       </div>
 
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn button text-white' %>
     <% end %>
   </div>
 </div>
