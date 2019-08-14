@@ -1,6 +1,5 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
-  font-size: 22px;
   line-height: 25px;
   padding: 5px 10px;
   transition: 0.5s;
@@ -9,14 +8,11 @@
 .navbar.scrolled {
   background-color: white;
   transition: background 2s;
+  border-bottom: 1px solid $light-gray;
 }
 
-.navbar-dark.scrolled .navbar-nav .nav-link {
+.navbar-dark.scrolled .navbar-nav .nav-link, .navbar.scrolled .navbar-logo {
   color: black;
 }
 
-.navbar.scrolled {
-  transition: background 2s;
-  border-bottom: 1px solid $light-gray;
-}
 
