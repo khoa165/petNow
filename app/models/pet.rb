@@ -9,7 +9,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :users, through: :booking
-  has_many :reviews, through: :booking
+  has_many :reviews
 
   # Validations
   validates :name, presence: true

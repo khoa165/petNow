@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get '/bookings/booked', to: 'bookings#booked'
   resources :pets do
     resources :bookings, only: [:create]
+    get '/reviews/all', to: 'reviews#pet_reviews', as: 'pet_reviews'
   end
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:index, :new, :create ]
   end
-  resources :reviews, only: [:index, :show, :edit, :update, :destroy]
 end
