@@ -43,6 +43,22 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = Review.where(pet: @pet)
+    @ratings = @reviews.map do |review|
+      review.stars
+    end
+    @sum = 0
+    @ratings.each do |rating|
+      @sum += rating
+    end
+    if @ratings.length == 0
+      @average_rating = 0
+      @leftovers_rating = 5
+    else
+      @average_rating = (@sum / @ratings.length.to_f)
+      @average_rating_rounded = @average_rating.round
+      @leftovers_rating = 5 - @average_rating_rounded
+    end
   end
 
   def destroy

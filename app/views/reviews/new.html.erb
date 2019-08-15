@@ -1,5 +1,7 @@
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :stars %>
-  <%= f.input :content %>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
-<% end %>
+<div class="col-6 offset-3 bg-secondary text-white p-3 my-3">
+  <%= simple_form_for [@booking, @review] do |f| %>
+    <%= f.input :stars, collection: [1, 2, 3, 4, 5], prompt: "Rate This Pet" %>
+    <%= f.input :content %>
+    <%= f.submit "add a review", class: "btn btn-primary" %>
+  <% end %>
+</div>
