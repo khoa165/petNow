@@ -1,15 +1,15 @@
+<div class="banner banner-sm d-flex d-flex flex-column justify-content-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('<%= cl_image_path @pet.photo %>');">
+</div>
+
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-lg-4">
-      <%= cl_image_tag @pet.photo, class: "card-img-top" %>
-    </div>
-    <div class="col-12 col-lg-8 align-left">
-      <%= render "bookings/form" %>
-    </div>
-    <div class="col-12">
       <h4 class="pet-name py-3 m-0 font-weight-bold"><%= @pet.name %></h4>
       <p>Age: <%= @pet.age %></p>
       <p>Species: <%= @pet.species %></p>
+    </div>
+    <div class="col-12 col-lg-8 align-left">
+      <%= render "bookings/form" %>
     </div>
   </div>
 </div>
