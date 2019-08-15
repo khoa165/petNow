@@ -31,6 +31,15 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = Review.where(pet: @pet)
+    @ratings = @reviews.map do |review|
+      review.stars
+    end
+    sum = 0
+    @ratings.each do |rating|
+      sum += rating
+    end
+    @average_rating = sum /= @ratings.length.to_f
   end
 
   def destroy
