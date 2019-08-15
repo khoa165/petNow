@@ -67,17 +67,15 @@ puts "User count 2nd time: #{User.count}"
 
 20.times do
   rentor = User.all.sample
-  pet_owners.delete(rentor)
-  pet = pet_owners.sample.pets.sample
-  start_date = Date.new(2019, 9, rand(1..30)),
-  end_date = Date.new(2019, 8, rand(1..31)),
+  pet = Pet.where.not(user: rentor).sample
+  start_date = Date.new(2019, 8, rand(1..30))
+  end_date = Date.new(2019, 9, rand(1..31))
   booking = Booking.create!(
     start_date: start_date,
     end_date: end_date,
     user: rentor,
     pet: pet
     )
-  pet_owners << rentor
   booking.total_price = booking.compute_price(pet.price_per_day)
   booking.save!
 end
