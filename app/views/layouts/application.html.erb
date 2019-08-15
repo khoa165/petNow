@@ -7,19 +7,29 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <!-- <%#= stylesheet_pack_tag 'application', media: 'all' %> -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <% if params[:controller] == "pages" || (params[:controller] == "pets" && params[:action] == "index") %>
+    <!-- Navbar -->
+    <% if params[:controller] == "pages" || (params[:controller] == "pets" && (params[:action] == "index" || params[:action] == "search")) %>
       <%= render 'shared/navbar' %>
     <% else %>
       <%= render 'shared/basic_navbar' %>
     <% end %>
+
+    <!-- Flashes -->
     <%= render 'shared/flashes' %>
 
     <%= yield %>
 
-    <%= render 'shared/footer' %>
+    <!-- Footer -->
+    <% if params[:controller] == "pages" %>
+      <%= render 'shared/footer' %>
+    <% else %>
+      <%= render 'shared/basic_footer' %>
+    <% end %>
+
+    <!-- Javascript -->
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
