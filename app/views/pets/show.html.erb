@@ -11,12 +11,12 @@
       <p class="pet-details">Species: <%= @pet.species.capitalize %></p>
       <p class="pet-details mb-3">Price per day: <%= @pet.price_per_day %></p>
       <% unless @average_rating_rounded.nil? %>
-        <% @average_rating_rounded.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-        <% @leftovers_rating.times do %>
-        <i class="far fa-star"></i>
-        <% end %>
+      <% @average_rating_rounded.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% @leftovers_rating.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
       <% end %>
     </div>
     <div class="col-12 col-lg-5">
@@ -28,6 +28,24 @@
   <div class="row mt-5">
     <div class="col-12 col-lg-7">
       <h4 class="pet-show-name display-4">Reviews</h4>
+      <% @pet.reviews.each do |review| %>
+      <div class="card">
+        <div class="card-image avatar">
+          <a href="#" type="button" class="btn">
+            <img src="https://images.unsplash.com/photo-1507682520764-93440a60e9b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80" />
+          </a>
+        </div>
+        <div class="card-info">
+          <hr>
+          <div class="content">
+            <p><%= review.content %></p>
+          </div>
+          <div class="name">
+            <p><%= review.booking.user.first_name %><%= review.booking.user.last_name %></p>
+          </div>
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
