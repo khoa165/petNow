@@ -2,14 +2,17 @@ class CreatePets < ActiveRecord::Migration[5.2]
   def change
     create_table :pets do |t|
       t.string :name
+      t.integer :age
+      t.text :description
       t.string :category
-      t.references :user
       t.string :species
       t.integer :avaerage_rating
-      t.integer :age
       t.integer :price_per_day
       t.string :photo
       t.string :address
+      t.string :city
+      t.string :country
+      t.references :user
 
       t.timestamps
     end
