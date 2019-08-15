@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <h1>Your upcoming bookings</h1>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-12">
+      <div class="card-booking">
+        <%= cl_image_tag booking.pet.photo %>
+        <div class="card-booking-infos">
+          <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
+          <h2><%=booking.pet.name%></h2>
+          <p><%=booking.pet.address%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
