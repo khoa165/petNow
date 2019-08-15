@@ -11,7 +11,7 @@ class Booking < ApplicationRecord
   end
 
   def compute_price(price_per_day)
-    num_days = start_date == end_date ? 1 : end_date - start_date
+    num_days = start_date == end_date ? 1 : (end_date - start_date).to_i
     num_days * price_per_day
   end
 end
