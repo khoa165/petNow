@@ -16,7 +16,14 @@ User.create(first_name: "Arman", last_name: "Balani", email: "arman@gmail.com", 
 User.create(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmail.com", password: "melissa123")
 
 # puts 'Creating pets...'
-
+Pet.create!(
+  user: User.first,
+  species: "dog",
+  name: "danko",
+  address: "Barcelona",
+  age: 23,
+  remote_photo_url: "https://www.medicalnewstoday.com/content//images/articles/322/322868/golden-retriever-puppy.jpg",
+  price_per_day: 23 )
 # 20.times do
 #   photo = ""
 #   species = ""
