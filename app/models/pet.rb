@@ -1,10 +1,12 @@
 class Pet < ApplicationRecord
-  # Constant.
+    # Constant.
   CATEGORIES = ["Domestic Animals", "Exotic Animals", "Mythical Creatures", "Aquatic Animals", "Insects"]
 
   # Set up image uploader for pet.
   mount_uploader :photo, PhotoUploader
-
+  #Geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   # Associations.
   belongs_to :user
   has_many :bookings, dependent: :destroy

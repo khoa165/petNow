@@ -8,6 +8,15 @@ class PetsController < ApplicationController
   def search
     species = params[:species].downcase.capitalize
     @pets = Pet.where(species: species)
+
+    @pets_geo = Pet.geocoded #returns pets with coordinates
+
+    @markers = @pets_geo.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude
+      }
+    end
   end
 
   def new
