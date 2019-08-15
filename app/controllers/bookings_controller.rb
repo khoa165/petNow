@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
   def booked
     @pets = Pet.where(user: current_user)
-    @bookings. = []
+    @bookings = []
     @pets.each do |pet|
       @bookings << Booking.where(pet: pet)
     end
