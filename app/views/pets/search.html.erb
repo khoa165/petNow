@@ -1,3 +1,10 @@
+<div class="banner banner-sm d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80);">
+  <div class="text-center">
+    <h1 class="mb-1 text-white"><%= current_user.first_name %>'s pets</h1>
+    <%= link_to "Add a pet", new_pet_path, class: 'btn button text-white mt-1' %>
+  </div>
+</div>
+
 <div class="container">
   <div class="row p-4">
     <% @pets.each do |pet| %>

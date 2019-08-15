@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <% if params[:controller] == "pages" || (params[:controller] == "pets" && params[:action] == "index") %>
+    <% if params[:controller] == "pages" || (params[:controller] == "pets" && (params[:action] == "index" || "search")) %>
       <%= render 'shared/navbar' %>
     <% else %>
       <%= render 'shared/basic_navbar' %>
