@@ -4,13 +4,6 @@
       <%= cl_image_tag @pet.photo, class: "card-img-top" %>
     </div>
     <div class="col-12 col-lg-8 align-left">
-      <!-- <%#= simple_form_for([@pet, @booking]) do |f| %>
-        <div class="form-group">
-          <%#= f.input :start_date, as: :date, html5: true, class: "form-control" %>
-          <%#= f.input :end_date, as: :date, html5: true, class: "form-control" %>
-        </div>
-        <%#= f.submit class: 'btn button text-white' %>
-      <%# end %> -->
       <%= render "bookings/form" %>
     </div>
     <div class="col-12">

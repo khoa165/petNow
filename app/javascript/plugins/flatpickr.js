@@ -2,12 +2,10 @@ import flatpickr from "flatpickr"
 import "flatpickr/dist/flatpickr.min.css"
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 
-flatpickr(".datepicker", {})
-
-
-import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
-
-flatpickr(".datepicker", {})
+flatpickr(".datepicker", {
+  allowInput: true,
+  enableTime: true
+})
 flatpickr("#range_start", {
   // disableMobile: true,
   altInput: true,

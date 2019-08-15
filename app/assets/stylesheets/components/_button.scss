@@ -1,3 +1,10 @@
-.button {
+.btn-custom-red {
+  border: 1px solid #FF4B4B;
+  color: #FF4B4B;
+}
+
+.btn-custom-red:hover {
   background-color: #FF4B4B;
+  color: white;
+  text-decoration: none;
 }
