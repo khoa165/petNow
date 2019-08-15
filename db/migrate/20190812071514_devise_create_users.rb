@@ -36,6 +36,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.boolean :is_owner
+      t.string :photo
 
       t.timestamps null: false
     end

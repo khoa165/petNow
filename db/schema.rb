@@ -29,14 +29,17 @@ ActiveRecord::Schema.define(version: 2019_08_15_101612) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
+    t.integer "age"
+    t.text "description"
     t.string "category"
-    t.bigint "user_id"
     t.string "species"
     t.integer "avaerage_rating"
-    t.integer "age"
     t.integer "price_per_day"
     t.string "photo"
     t.string "address"
+    t.string "city"
+    t.string "country"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
@@ -45,12 +48,15 @@ ActiveRecord::Schema.define(version: 2019_08_15_101612) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.string "title"
     t.string "content"
     t.integer "stars"
     t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pet_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["pet_id"], name: "index_reviews_on_pet_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_101612) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "is_owner"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
