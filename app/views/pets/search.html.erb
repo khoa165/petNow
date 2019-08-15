@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row p-4">
     <% @pets.each do |pet| %>
@@ -11,8 +10,8 @@
             <li>Age: <%= pet.age %></li>
           </ul>
           <div class="d-flex justify-content-end">
-            <%= link_to pet_path(pet), class: 'text-success' do %>
-              <i class="fas fa-info-circle"></i>
+            <%= link_to pet_path(pet), class: 'text-primary' do %>
+              <i class="fas fa-info-circle"> More info</i>
             <% end %>
           </div>
         </div>
