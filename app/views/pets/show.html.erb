@@ -7,9 +7,12 @@
       <h4 class="py-3 m-0 font-weight-bold"><%= @pet.name %></h4>
       <p>Age: <%= @pet.age %></p>
       <p>Species: <%= @pet.species %></p>
+      <p class="m-0">Price per day: <%= @pet.price_per_day %></p>
     </div>
     <div class="col-12 col-lg-5">
+      <% unless @pet.user == current_user %>
       <%= render "bookings/form" %>
+      <% end %>
     </div>
   </div>
 </div>
