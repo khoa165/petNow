@@ -1,8 +1,10 @@
 <div class="container py-5">
   <h1>Your upcoming bookings</h1>
   <div class="row">
-    <% @bookings.each do |booking| %>
-    <div class="col-12">
+    <% @pets_bookings.each do |pet_bookings| %>
+    <div class="col-12 col-md-6 offset-md-3">
+      <h1>Pet</h1>
+      <% pet_bookings.each do |booking| %>
       <div class="card-booking justify-content-between">
         <%= cl_image_tag booking.pet.photo %>
         <div class="card-booking-infos">
@@ -11,10 +13,11 @@
           <p><%=booking.pet.address%></p>
         </div>
          <div class="card-booking-infos">
-          <p> <%= booking.compute_price(booking.pet.price_per_day) %> </p>
+          <p>Total: <%= booking.compute_price(booking.pet.price_per_day) %></p>
           <%= link_to "view booking", booking_path(booking) %>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>

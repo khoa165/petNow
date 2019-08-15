@@ -7,15 +7,18 @@
       <h4 class="py-3 m-0 font-weight-bold"><%= @pet.name %></h4>
       <p>Age: <%= @pet.age %></p>
       <p>Species: <%= @pet.species %></p>
+      <p class="m-0">Price per day: <%= @pet.price_per_day %></p>
       <% @average_rating_rounded.times do %>
-        <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
       <% end %>
       <% @leftovers_rating.times do %>
-        <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
       <% end %>
     </div>
     <div class="col-12 col-lg-5">
+      <% unless @pet.user == current_user %>
       <%= render "bookings/form" %>
+      <% end %>
     </div>
   </div>
 </div>
