@@ -7,7 +7,12 @@
       <h4 class="py-3 m-0 font-weight-bold"><%= @pet.name %></h4>
       <p>Age: <%= @pet.age %></p>
       <p>Species: <%= @pet.species %></p>
-      <p>Average Rating: <%= @average_rating %></p>
+      <% @average_rating_rounded.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% @leftovers_rating.times do %>
+        <i class="far fa-star"></i>
+      <% end %>
     </div>
     <div class="col-12 col-lg-5">
       <%= render "bookings/form" %>
