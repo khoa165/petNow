@@ -7,7 +7,11 @@ class BookingsController < ApplicationController
 
   def booked
     @pets = Pet.where(user: current_user)
+<<<<<<< HEAD
     @pets_bookings = []
+=======
+    @bookings = []
+>>>>>>> master
     @pets.each do |pet|
       @pets_bookings << Booking.where(pet: pet)
     end
