@@ -5,6 +5,14 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
+  def booked
+    @pets = Pet.where(user: current_user)
+    @bookings. = []
+    @pets.each do |pet|
+      @bookings << Booking.where(pet: pet)
+    end
+  end
+
   def show
   end
 
