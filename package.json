@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "flatpickr": "^4.6.2",
     "jquery": "^3.4.1",
+    "mapbox-gl": "^1.2.1",
     "popper.js": "^1.15.0",
     "typed.js": "^2.0.10"
   },
