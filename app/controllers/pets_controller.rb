@@ -6,8 +6,20 @@ class PetsController < ApplicationController
   end
 
   def search
-    species = params[:species].downcase.capitalize
-    @pets = Pet.where(species: species)
+    @pets = Pet.geocoded
+
+    species_query = params[:species]
+    if species_query.present?
+      @pets = @pets.where("species ILIKE ?", "%#{species_query}%")
+    end
+
+
+    @markers = @pets.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude
+      }
+    end
   end
 
   def new
@@ -31,6 +43,22 @@ class PetsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = Review.where(pet: @pet)
+    @ratings = @reviews.map do |review|
+      review.stars
+    end
+    @sum = 0
+    @ratings.each do |rating|
+      @sum += rating
+    end
+    if @ratings.length == 0
+      @average_rating = 0
+      @leftovers_rating = 5
+    else
+      @average_rating = (@sum / @ratings.length.to_f)
+      @average_rating_rounded = @average_rating.round
+      @leftovers_rating = 5 - @average_rating_rounded
+    end
   end
 
   def destroy
@@ -41,7 +69,7 @@ class PetsController < ApplicationController
   private
 
   def pet_strong_params
-    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category, :photo)
+    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category, :photo, :address)
   end
 
   def set_pet

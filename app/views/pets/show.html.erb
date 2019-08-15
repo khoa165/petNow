@@ -8,6 +8,14 @@
       <p>Age: <%= @pet.age %></p>
       <p>Species: <%= @pet.species %></p>
       <p class="m-0">Price per day: <%= @pet.price_per_day %></p>
+      <% unless @average_rating_rounded.nil? %>
+        <% @average_rating_rounded.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% @leftovers_rating.times do %>
+        <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="col-12 col-lg-5">
       <% unless @pet.user == current_user %>

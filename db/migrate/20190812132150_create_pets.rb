@@ -12,6 +12,8 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :city
       t.string :country
+      t.float :latitude
+      t.float :longitude
       t.references :user
 
       t.timestamps

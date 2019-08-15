@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_135015) do
+ActiveRecord::Schema.define(version: 2019_08_13_153159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_08_14_135015) do
     t.string "address"
     t.string "city"
     t.string "country"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,9 +52,9 @@ ActiveRecord::Schema.define(version: 2019_08_14_135015) do
     t.string "content"
     t.integer "stars"
     t.bigint "booking_id"
+    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "pet_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
     t.index ["pet_id"], name: "index_reviews_on_pet_id"
   end
@@ -76,4 +78,5 @@ ActiveRecord::Schema.define(version: 2019_08_14_135015) do
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "pets"
 end
