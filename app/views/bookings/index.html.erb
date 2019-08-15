@@ -2,19 +2,49 @@
   <h1>Your upcoming bookings</h1>
   <div class="row">
     <% @bookings.each do |booking| %>
-    <div class="col-12">
-      <div class="card-booking justify-content-between">
-        <%= cl_image_tag booking.pet.photo %>
-        <div class="card-booking-infos">
-          <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
-          <h2><%=booking.pet.name%></h2>
-          <p><%=booking.pet.address%></p>
-        </div>
-         <div class="card-booking-infos">
-          <p> <%= booking.compute_price(booking.pet.price_per_day) %> </p>
-          <%= link_to "view booking", booking_path(booking) %>
+    <% if booking.end_date >= Date.today %>
+
+      <div class="col-12">
+        <div class="card-booking d-flex">
+          <%= cl_image_tag booking.pet.photo%>
+          <div class="mr-auto p-2">
+            <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
+            <h2><%=booking.pet.name%></h2>
+          </div>
+          <div class="p-1 my-2 border-left">
+            <p>Total price:</p>
+            <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
+            <br>
+            <%= link_to "view booking", booking_path(booking) %>
+          </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+      <% end %>
+    </div>
+
+
+    <div class="row">
+      <% @bookings.each do |booking| %>
+      <% if booking.end_date < Date.today %>
+        <h1>Your past bookings</h1>
+      <div class="col-12">
+        <div class="card-booking d-flex">
+          <%= cl_image_tag booking.pet.photo%>
+          <div class="mr-auto p-2">
+            <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
+            <h2><%=booking.pet.name%></h2>
+          </div>
+          <div class="p-1 my-2 border-left">
+            <p>Total price:</p>
+            <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
+            <%= link_to "view booking", booking_path(booking) %>
+            <br>
+            <%= link_to "leave a review", new_booking_review_path(booking) %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
