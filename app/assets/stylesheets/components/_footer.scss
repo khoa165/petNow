@@ -9,6 +9,7 @@
 .return-question {
   font-weight: bold;
   font-size: 16px;
+  margin: 5px;
 }
 
 .bs-tooltip-auto[x-placement^=bottom] .arrow::before,
@@ -29,7 +30,7 @@
 
 .return-to-top i {
   background-color: #FF4B4B;
-  padding: 15px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 30px;
   color: white;
