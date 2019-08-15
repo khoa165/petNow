@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_112306) do
+ActiveRecord::Schema.define(version: 2019_08_13_153159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,24 +39,12 @@ ActiveRecord::Schema.define(version: 2019_08_15_112306) do
     t.string "address"
     t.string "city"
     t.string "country"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
     t.index ["user_id"], name: "index_pets_on_user_id"
-  end
-
-  create_table "rating_caches", force: :cascade do |t|
-    t.string "cacheable_type"
-    t.bigint "cacheable_id"
-    t.float "avg", null: false
-    t.integer "qty", null: false
-    t.string "dimension"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
-    t.index ["cacheable_type", "cacheable_id"], name: "index_rating_caches_on_cacheable_type_and_cacheable_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -64,9 +52,9 @@ ActiveRecord::Schema.define(version: 2019_08_15_112306) do
     t.string "content"
     t.integer "stars"
     t.bigint "booking_id"
+    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "pet_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
     t.index ["pet_id"], name: "index_reviews_on_pet_id"
   end
@@ -90,4 +78,5 @@ ActiveRecord::Schema.define(version: 2019_08_15_112306) do
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "pets"
 end
