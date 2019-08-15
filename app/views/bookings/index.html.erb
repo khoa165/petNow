@@ -11,7 +11,7 @@
             <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
             <h2 class="my-1"><%=booking.pet.name%></h2>
           </div>
-          <div class="p-1 my-2 border-left">
+          <div class="py-1 pl-3 my-2 border-left">
             <p>Total price:</p>
             <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
             <br>
@@ -35,7 +35,7 @@
             <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
             <h2 class="my-1"><%=booking.pet.name%></h2>
           </div>
-          <div class="p-1 my-2 border-left">
+          <div class="py-1 pl-3 my-2 border-left">
             <p>Total price:</p>
             <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
             <%= link_to "view booking", booking_path(booking) %>
