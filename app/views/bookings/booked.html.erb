@@ -1,0 +1,8 @@
+<% @pets_bookings.each do |bookings| %>
+  <h1>Bookings for new pet</h1>
+  <% bookings.each do |b| %>
+    <h4>New booking</h4>
+    <p>b.start_date</p>
+    <p>b.end_date</p>
+  <% end %>
+<% end %>
