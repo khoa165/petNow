@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/pets/search', to: 'pets#search'
+  get '/bookings/booked', to: 'bookings#booked'
   resources :pets do
     resources :bookings, only: [:create]
     get '/reviews/all', to: 'reviews#pet_reviews', as: 'pet_reviews'

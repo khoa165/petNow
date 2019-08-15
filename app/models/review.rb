@@ -1,9 +1,11 @@
 class Review < ApplicationRecord
+  RATINGS = (0..5).to_a
+
   # Associations.
   belongs_to :booking
   belongs_to :pet
 
   # Validations.
-  validates :stars, numericality: { less_than_or_equal_to: 5, only_integer: true }
-  validates :content, presence: true, length: { minimum: 50 }
+  validates :stars, numericality: true, inclusion: {in: RATINGS}
+  validates :content, presence: true, length: { in: 10..300 }
 end
