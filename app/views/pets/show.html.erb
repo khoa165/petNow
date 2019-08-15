@@ -9,7 +9,9 @@
       <p>Species: <%= @pet.species %></p>
     </div>
     <div class="col-12 col-lg-5">
+      <% if @pet.user == current_user %>
       <%= render "bookings/form" %>
+      <% end %>
     </div>
   </div>
 </div>
