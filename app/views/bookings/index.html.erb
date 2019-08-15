@@ -8,8 +8,8 @@
         <div class="card-booking d-flex">
           <%= cl_image_tag booking.pet.photo%>
           <div class="mr-auto p-2">
-            <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
-            <h2><%=booking.pet.name%></h2>
+            <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
+            <h2 class="my-1"><%=booking.pet.name%></h2>
           </div>
           <div class="p-1 my-2 border-left">
             <p>Total price:</p>
@@ -32,8 +32,8 @@
         <div class="card-booking d-flex">
           <%= cl_image_tag booking.pet.photo%>
           <div class="mr-auto p-2">
-            <p> <%= booking.start_date %> - <%= booking.end_date%> </p>
-            <h2><%=booking.pet.name%></h2>
+            <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
+            <h2 class="my-1"><%=booking.pet.name%></h2>
           </div>
           <div class="p-1 my-2 border-left">
             <p>Total price:</p>
