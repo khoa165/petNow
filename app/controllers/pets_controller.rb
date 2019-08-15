@@ -6,12 +6,15 @@ class PetsController < ApplicationController
   end
 
   def search
-    species = params[:species].downcase.capitalize
-    @pets = Pet.where(species: species)
+    @pets = Pet.geocoded
 
-    @pets_geo = Pet.geocoded #returns pets with coordinates
+    species_query = params[:species]
+    if species_query.present?
+      @pets = @pets.where("species ILIKE ?", "%#{species_query}%")
+    end
 
-    @markers = @pets_geo.map do |pet|
+
+    @markers = @pets.map do |pet|
       {
         lat: pet.latitude,
         lng: pet.longitude
@@ -50,7 +53,7 @@ class PetsController < ApplicationController
   private
 
   def pet_strong_params
-    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category, :photo)
+    params.require(:pet).permit(:name, :species, :price_per_day, :age, :category, :photo, :address)
   end
 
   def set_pet
