@@ -10,4 +10,12 @@ class User < ApplicationRecord
   # Devise features.
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def is_owner?
+    is_owner
+  end
+
+  def mark_owner
+    is_owner = true
+  end
 end

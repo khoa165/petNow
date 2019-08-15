@@ -6,7 +6,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :category
       t.string :species
-      t.integer :avaerage_rating
+      t.integer :average_rating, default: 0
       t.integer :price_per_day
       t.string :photo
       t.string :address
