@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get '/reviews/all', to: 'reviews#pet_reviews', as: 'pet_reviews'
   end
   resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
-    resources :reviews, only: [:index, :new, :create ]
+    resources :reviews, only: [:index, :new, :create]
   end
 end
