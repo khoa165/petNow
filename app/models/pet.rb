@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :users, through: :booking
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   # Set up image uploader for pet.
   mount_uploader :photo, PhotoUploader
