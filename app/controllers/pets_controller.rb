@@ -1,9 +1,12 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user, only: [:search]
+  skip_before_action :authenticate_user!, only: [:search, :show]
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.where(user: current_user)
+    if user_signed_in?
+      @pets = Pet.where(user: current_user)
+    else
+      @pets = Pet.limit(15)
   end
 
   def search
