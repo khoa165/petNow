@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :pet
-  has_one :review, dependent: :destroy
+  has_many :review, dependent: :destroy
 
   validates :start_date, presence: true
   validates :end_date, presence: true
