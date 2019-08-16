@@ -1,6 +1,7 @@
-<div class="card p-2">
+<div class="card p-2 text-dark" >
   <h2 class="font-weight-bold"><%= pet.name %></h2>
-  <p class=""><%= pet.species %></p>
-  <p><%= pet.address %></p>
-  <p><%= pet.price_per_day %></p>
+  <div>
+    <p><%= pet.address %></p>
+    <p class="font-weight-bold"><%= pet.price_per_day %>$/day</p>
+  </div>
 </div>
