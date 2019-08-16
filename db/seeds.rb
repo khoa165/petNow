@@ -80,6 +80,18 @@ puts "User count 2nd time: #{User.count}"
   booking.save!
 end
 
+puts "Creating reviews"
+
+80.times do
+  booking = Booking.all.sample
+  review = Review.create!(
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat doloribus repellendus odit praesentium soluta, suscipit excepturi ipsa adipisci aliquam, cum laudantium tempora totam possimus, quisquam labore facere a dicta deserunt!",
+    stars: rand(1..5),
+    booking: booking,
+    pet: booking.pet
+    )
+end
+
 # 20.times do
 #   photo = ""
 #   species = ""

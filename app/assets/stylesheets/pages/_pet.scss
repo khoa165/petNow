@@ -3,6 +3,7 @@
 }
 
 .pet-details {
+  opacity: .7;
   font-weight: 400;
 }
 
@@ -23,7 +24,6 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -32,4 +32,16 @@
 
 .card-user {
   display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.card-user h2 {
+  justify-content: center;
+  align-items: center;
+}
+
+.card-trip-user img {
+
 }
