@@ -3,10 +3,7 @@ class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @pets = Pet.where(user: current_user)
-    else
-      @pets = Pet.limit(15)
+    @pets = Pet.where(user: current_user)
   end
 
   def search
@@ -16,7 +13,7 @@ class PetsController < ApplicationController
 
     species_query = params[:species]
     if species_query.present?
-      @pets = @pets.where("species ILIKE ?", "%#{species_query}%")
+      @pets = @pets.where("species ILIKE ?", "%#{species_query}%").limit(20)
     end
 
 
