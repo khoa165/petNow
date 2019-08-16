@@ -27,25 +27,19 @@
   </div>
   <div class="row mt-5">
     <div class="col-12 col-lg-7">
-      <h4 class="pet-show-name display-4">Reviews</h4>
+      <h4 class="pet-show-name display-4 mb-3">Reviews</h4>
       <% @pet.reviews.each do |review| %>
-      <div class="card">
-        <div class="card-image avatar">
-          <a href="#" type="button" class="btn">
-            <img src="https://images.unsplash.com/photo-1507682520764-93440a60e9b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80" />
-          </a>
-        </div>
-        <div class="card-info">
-          <hr>
-          <div class="content">
+      <div class="card-trip">
+        <div class="card-trip-infos">
+          <div class="card-user">
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <h2><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></h2>
+          </div>
+          </div>
             <p><%= review.content %></p>
-          </div>
-          <div class="name">
-            <p><%= review.booking.user.first_name %><%= review.booking.user.last_name %></p>
-          </div>
         </div>
+  <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
