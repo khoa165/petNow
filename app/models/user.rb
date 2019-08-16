@@ -3,10 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   # Associations.
-  has_many :pets
-  # , dependent: :destroy
-  has_many :bookings
-  # , dependent: :destroy
+  has_many :pets, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
   # , dependent: :destroy
 
