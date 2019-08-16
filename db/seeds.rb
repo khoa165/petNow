@@ -68,8 +68,8 @@ puts "User count 2nd time: #{User.count}"
 20.times do
   rentor = User.all.sample
   pet = Pet.where.not(user: rentor).sample
-  start_date = Date.new(2019, 8, rand(1..30))
-  end_date = Date.new(2019, 9, rand(1..31))
+  start_date = Date.new(2019, 8, rand(1..31))
+  end_date = Date.new(2019, 9, rand(1..30))
   booking = Booking.create!(
     start_date: start_date,
     end_date: end_date,
