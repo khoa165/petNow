@@ -13,13 +13,15 @@
     <div class="col-sm-4">
       <div class="card mb-3">
         <div class="px-3">
+          <%= link_to pet_path(pet) do %>
           <%= cl_image_tag pet.photo, style: "object-fit: cover;", class: "card-img-top pt-3"%>
+          <% end %>
           <div>
             <h4 class="pet-name py-3 m-0 font-weight-bold"><%= pet.name %></h4>
             <div class="my-1">
               <p class="m-0">Age: <%= pet.age %></p>
               <p class="m-0">Species: <%= pet.species %></p>
-              <p class="m-0">Price per day: <%= pet.price_per_day %></p>
+              <p class="m-0">Price per day: <%= pet.price_per_day %>€</p>
             </div>
           </div>
         </div>
@@ -27,6 +29,7 @@
           <%= link_to "View Details", pet_path(pet), class: 'btn btn-outline-red mb-2'%>
         </div>
       </div>
+
     </div>
     <% end %>
   </div>
