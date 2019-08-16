@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  skip_before_action :authenticate_user, only: [:search]
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,6 +8,8 @@ class PetsController < ApplicationController
 
   def search
     @pets = Pet.geocoded
+
+    @pets = @pets.where.not(user: current_user)
 
     species_query = params[:species]
     if species_query.present?

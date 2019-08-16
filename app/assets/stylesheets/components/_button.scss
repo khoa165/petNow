@@ -1,9 +1,19 @@
-.btn-custom-red {
+.btn-red {
+  background-color: #FF4B4B;
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: red;
+  color: white;
+}
+
+.btn-outline-red {
   border: 1px solid #FF4B4B;
   color: #FF4B4B;
 }
 
-.btn-custom-red:hover {
+.btn-outline-red:hover {
   background-color: #FF4B4B;
   color: white;
   text-decoration: none;
