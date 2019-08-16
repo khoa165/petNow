@@ -12,9 +12,12 @@
 <div class="container my-5">
   <h2><span class="animal-heading">Dogs</span> from around the world</h2>
   <div class="row mb-5">
+
     <div class="col-12 col-md-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=960&q=80" alt="Card Zozzo">
+      <%= link_to pets_search_path(species: "dog") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=960&q=80" alt="Card Zozzo">
+      <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Zozzo</h4></li>
           <li>Species: Dog</li>
@@ -25,7 +28,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1512546321483-c0468b7b8a95?ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80" alt="Card Rocco" alt="Card Rocco">
+        <%= link_to pets_search_path(species: "dog") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1512546321483-c0468b7b8a95?ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80" alt="Card Rocco" alt="Card Rocco">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Rocco</h4></li>
           <li>Species: Dog</li>
@@ -36,7 +41,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="Card Molly">
+        <%= link_to pets_search_path(species: "dog") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="Card Molly">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Molly</h4></li>
           <li>Species: Dog</li>
@@ -50,7 +57,9 @@
   <div class="row mb-5">
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "cat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1445499348736-29b6cdfc03b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Kitty</h4></li>
           <li>Species: Cat</li>
@@ -61,7 +70,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "cat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Lotti</h4></li>
           <li>Species: Cat</li>
@@ -72,7 +83,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "cat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Hedwig</h4></li>
           <li>Species: Cat</li>
@@ -86,7 +99,9 @@
   <div class="row mb-5">
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1532356948574-9f03b5dcd0b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1872&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "goat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1532356948574-9f03b5dcd0b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1872&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Rudolph</h4></li>
           <li>Species: Goat</li>
@@ -97,7 +112,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1538724426109-5c5dce0bd7f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2132&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "goat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1538724426109-5c5dce0bd7f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2132&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Ernst</h4></li>
           <li>Species: Goat</li>
@@ -108,7 +125,9 @@
 
     <div class="col-12 col-sm-4">
       <div class="card p-3 mt-2">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1533318087102-b3ad366ed041?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="Card Cat">
+        <%= link_to pets_search_path(species: "goat") do %>
+        <img class="card-img-top" style="object-fit: cover;" src="https://images.unsplash.com/photo-1533318087102-b3ad366ed041?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" alt="Card Cat">
+        <% end %>
         <ul class="list-unstyled mt-2">
           <li><h4 class="font-weight-bold">Luis</h4></li>
           <li>Species: Goat</li>
@@ -117,10 +136,6 @@
       </div>
     </div>
   </div>
-
-
-
-
 
 </div>
 

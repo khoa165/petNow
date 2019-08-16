@@ -26,12 +26,31 @@
           <%= link_to pet_path(pet), class: 'text-primary' do %>
           <i class="fas fa-info-circle"> Info</i>
           <% end %>
-          <%= link_to edit_pet_path(pet), class: 'text-warning mx-3' do %>
-          <i class="fas fa-edit"> Edit</i>
+
+
+
+
+
+          <%= link_to edit_pet_path(pet), class: 'text-secondary mr-3' do %>
+            <div class="d-flex justify-space-between">
+              <i class="fas fa-edit"></i>
+              <p class="ml-1"> Edit </p>
+              </div>
           <% end %>
-          <%= link_to pet_path(pet), method: :delete, class: 'text-danger' do %>
-          <i class="fas fa-trash-alt"> Remove</i>
+
+
+
+          <%= link_to pet_path(pet), method: :delete, class: 'text-danger mr-3' do %>
+            <div class="d-flex justify-space-between">
+              <i class="fas fa-trash-alt"></i>
+              <p class="ml-1"> Remove </p>
+            </div>
           <% end %>
+
+
+
+
+
         </div>
       </div>
     </div>
