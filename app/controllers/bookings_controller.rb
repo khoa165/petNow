@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
+  def booking
+    @bookings = Booking.where(user: current_user)
+  end
+
   def booked
     @pets = Pet.where(user: current_user)
     @pets_bookings = []

@@ -33,7 +33,7 @@
               <p class="ml-1"> Edit booking </p>
               </div>
           <% end %>
-          <%= link_to booking_path(@booking), method: :delete, class: 'text-danger mr-3' do %>
+          <%= link_to booking_path(@booking), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-danger mr-3' do %>
             <div class="d-flex justify-space-between">
               <i class="fas fa-trash-alt"></i>
               <p class="ml-1"> Cancel booking </p>

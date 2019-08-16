@@ -1,0 +1,39 @@
+.tab {
+  background-color: rgb(200, 200, 200);
+  color: white;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background-color: rgb(120, 120, 120);
+}
+
+.tab-left {
+  border-radius: 20px 0 0 0;
+}
+
+.tab-right {
+  border-radius: 0 20px 0 0;
+}
+
+.active {
+  background-color: rgb(150, 150, 150);
+}
+
+.link {
+  color: white;
+}
+
+.tab:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.tab-row .link:hover {
+  text-decoration: none;
+  color: white;
+}
