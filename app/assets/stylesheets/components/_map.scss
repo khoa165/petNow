@@ -6,4 +6,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-
+#map {
+  position: sticky;
+  top: 0;
+  flex: 1 0 auto;
+  height: 100vh;
+}

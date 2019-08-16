@@ -11,6 +11,10 @@
 @import "container";
 @import "_map";
 
+.cards-box {
+  width: 66.6%;
+}
 
-
-
+.map-layout {
+  justify-content: space-between;
+}

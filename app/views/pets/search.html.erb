@@ -7,22 +7,16 @@
 </div>
 
 
-<div class="container">
-  <div class="" id="map"
-    style="height: 350px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-  <div class="row">
+<div class="d-flex p-2 map-layout">
+  <div class="row pr-2 cards-box">
     <% @pets.each do |pet| %>
-    <div class="col-12 col-lg-4"
-      <div class="card my-3">
+    <div class="col-sm-4">
+      <div class="card mb-3">
         <div class="px-3">
           <%= cl_image_tag pet.photo, style: "object-fit: cover;", class: "card-img-top pt-3"%>
           <div>
             <h4 class="pet-name py-3 m-0 font-weight-bold"><%= pet.name %></h4>
-            <div class="my-2">
+            <div class="my-1">
               <p class="m-0">Age: <%= pet.age %></p>
               <p class="m-0">Species: <%= pet.species %></p>
               <p class="m-0">Price per day: <%= pet.price_per_day %></p>
@@ -37,6 +31,10 @@
     <% end %>
   </div>
 
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
 
