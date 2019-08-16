@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/pets/search', to: 'pets#search'
   get '/bookings/booked', to: 'bookings#booked'
-  get '/bookings/booking', to: 'bookings#booking'
   resources :pets do
     resources :bookings, only: [:create]
     get '/reviews/all', to: 'reviews#pet_reviews', as: 'pet_reviews'
