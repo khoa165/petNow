@@ -50,7 +50,7 @@
     <h1>My past bookings</h1>
     <% @bookings.each do |booking| %>
     <% if booking.end_date < Date.today %>
-    <div class="col-12">
+    <div class="col-12 p-0">
       <div class="card-booking d-flex">
         <%= cl_image_tag booking.pet.photo%>
         <div class="mr-auto p-2">
