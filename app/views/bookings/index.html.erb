@@ -3,7 +3,6 @@
   <div class="row">
     <% @bookings.each do |booking| %>
     <% if booking.end_date >= Date.today %>
-
       <div class="col-12">
         <div class="card-booking d-flex">
           <%= cl_image_tag booking.pet.photo%>
