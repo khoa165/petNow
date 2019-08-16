@@ -2,24 +2,24 @@
   <div class="row tab-row">
     <div class="col-6 p-0">
       <%= link_to bookings_path, class: "link" do %>
-        <div class="tab tab-left active">
-          <p class="m-0">Your bookings</p>
-        </div>
+      <div class="tab tab-left active">
+        <p class="m-0">My bookings</p>
+      </div>
       <% end %>
     </div>
     <div class="col-6 p-0">
       <%= link_to bookings_booked_path, class: "link" do %>
-        <div class="tab tab-right">
-          <p class="m-0">Your pets' bookings</p>
-        </div>
+      <div class="tab tab-right">
+        <p class="m-0">My pets' bookings</p>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
 
 <div class="container pb-5">
-  <h1>Your upcoming bookings</h1>
   <div class="row">
+    <h1>My upcoming bookings</h1>
     <% @bookings.each do |booking| %>
     <% if booking.end_date >= Date.today %>
     <div class="col-12 p-0">
@@ -46,8 +46,8 @@
     <% end %>
   </div>
 
-  <h1>Your past bookings</h1>
   <div class="row">
+    <h1>My past bookings</h1>
     <% @bookings.each do |booking| %>
     <% if booking.end_date < Date.today %>
     <div class="col-12">

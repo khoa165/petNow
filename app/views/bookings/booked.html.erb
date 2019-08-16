@@ -3,14 +3,14 @@
     <div class="col-6 p-0">
       <%= link_to bookings_path, class: "link" do %>
         <div class="tab tab-left">
-          <p class="m-0">Your bookings</p>
+          <p class="m-0">My bookings</p>
         </div>
       <% end %>
     </div>
     <div class="col-6 p-0">
       <%= link_to bookings_booked_path, class: "link" do %>
         <div class="tab tab-right active">
-          <p class="m-0">Your pets' bookings</p>
+          <p class="m-0">My pets' bookings</p>
         </div>
       <% end %>
     </div>
@@ -19,36 +19,63 @@
 
 <div class="container pb-5">
   <div class="row">
-    <div class="col-3 p-0">
-    </div>
-    <div class="col-9 p-0">
-      <h1 class="font-weight-bold">Your upcoming bookings</h1>
-    </div>
-  </div>
-  <div class="row">
+    <h1>My upcoming bookings</h1>
     <% @pets_bookings.each do |pet_bookings| %>
       <% if pet_bookings.size > 0 %>
         <div class="col-12 p-0">
-          <h1><%= pet_bookings.first.pet.name %></h1>
           <% pet_bookings.each do |booking| %>
-            <div class="card-booking d-flex py-3">
-              <%= cl_image_tag booking.pet.photo %>
-              <div class="mr-auto p-2">
-                <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
-                <h2 class="my-1"><%=booking.pet.name.capitalize%></h2>
-              </div>
-              <div class="py-1 pl-3 my-2 border-left">
-                <p>Total price:</p>
-                <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
-                <br>
-                <%= link_to booking_path(booking), class: 'text-secondary' do %>
-                <div class="d-flex justify-space-between align-items-center">
-                  <i class="far fa-eye"></i>
-                  <p class="ml-1"> View booking </p>
+            <% if booking.end_date >= Date.today %>
+              <div class="card-booking d-flex py-3">
+                <%= cl_image_tag booking.pet.photo %>
+                <div class="mr-auto p-2">
+                  <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
+                  <h2 class="my-1"><%=booking.pet.name.capitalize%></h2>
                 </div>
-                <% end %>
+                <div class="py-1 pl-3 my-2 border-left">
+                  <p>Total price:</p>
+                  <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
+                  <br>
+                  <%= link_to booking_path(booking), class: 'text-secondary' do %>
+                  <div class="d-flex justify-space-between align-items-center">
+                    <i class="far fa-eye"></i>
+                    <p class="ml-1"> View booking </p>
+                  </div>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <h1>My past bookings</h1>
+    <% @pets_bookings.each do |pet_bookings| %>
+      <% if pet_bookings.size > 0 %>
+        <div class="col-12 p-0">
+          <% pet_bookings.each do |booking| %>
+            <% if booking.end_date < Date.today %>
+              <div class="card-booking d-flex py-3">
+                <%= cl_image_tag booking.pet.photo %>
+                <div class="mr-auto p-2">
+                  <p> <%= booking.start_date.strftime("%A, %b %d") %> - <%= booking.end_date.strftime("%A, %b %d")%> </p>
+                  <h2 class="my-1"><%=booking.pet.name.capitalize%></h2>
+                </div>
+                <div class="py-1 pl-3 my-2 border-left">
+                  <p>Total price:</p>
+                  <h2><%= booking.compute_price(booking.pet.price_per_day)%> €</h2>
+                  <br>
+                  <%= link_to booking_path(booking), class: 'text-secondary' do %>
+                  <div class="d-flex justify-space-between align-items-center">
+                    <i class="far fa-eye"></i>
+                    <p class="ml-1"> View booking </p>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       <% end %>
