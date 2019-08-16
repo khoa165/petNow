@@ -16,7 +16,7 @@ class Booking < ApplicationRecord
   private
 
   def valid_end_date
-    if end_date < start_date
+    if end_date <= start_date
       errors.add(:end_date, "End date must be after start date")
     end
   end

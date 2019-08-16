@@ -45,11 +45,12 @@
           </div>
         </div>
         <div class="mb-2">
-          <% unless @average_rating_rounded.nil? %>
-          <% @average_rating_rounded.times do %>
+          <% unless review.stars.nil? %>
+          <% review.stars.times do %>
           <i class="fas fa-star"></i>
           <% end %>
-          <% @leftovers_rating.times do %>
+          <% leftovers_rating = (5 - review.stars) %>
+          <% leftovers_rating.times do %>
           <i class="far fa-star"></i>
           <% end %>
           <% end %>
