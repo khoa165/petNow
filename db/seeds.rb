@@ -24,7 +24,7 @@ images = {
   "bunny" => bunnies,
   "fox" => foxs
 }
-user_photo = "https://files.slack.com/files-pri/T02NE0241-FMENYK13P/avatar_placeholder.png"
+user_photo = "https://images.unsplash.com/photo-1532202802379-df93d543bac3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
 puts 'Creating users...'
 khoa = User.create!(first_name: "Khoa", last_name: "Le", email: "khoa@gmail.com", password: "khoa123", remote_photo_url: user_photo)
 danko = User.create!(first_name: "Danko", last_name: "Beribak", email: "danko@gmail.com", password: "danko123", remote_photo_url: user_photo)
