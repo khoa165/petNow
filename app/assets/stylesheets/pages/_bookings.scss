@@ -6,12 +6,14 @@
   cursor: pointer;
 }
 
-// .booking-card i{
-// }
+.booking-card a {
+  white-space: nowrap;
+}
 
-// .melissa {
-//   font-family: Roboto;
-// }
+.booking-card a:hover {
+  text-decoration: none;
+}
+
 
 .booking-card:hover {
   // box-shadow: 0 4px 7px rgba(0,0,0,0.25), 0 3px 5px rgba(0,0,0,0.22);
@@ -20,6 +22,7 @@
 .booking-info {
   color: rgba(0,0,0,0.8);
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .booking-pet {
