@@ -9,8 +9,15 @@
 @import "image";
 @import "cardbooking";
 @import "container";
+@import "tab";
 @import "_map";
-@import "tab"
 
 
+.cards-box {
+  width: 66.6%;
+}
 
+
+.map-layout {
+  justify-content: space-between;
+}
