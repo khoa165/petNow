@@ -1,7 +1,7 @@
 <div class="banner banner-sm d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80);">
   <div class="container">
     <div class="px-3">
-      <h1 class="mb-1 text-white">Check out these adorable <span class="font-weight-bold"><%= @pets.first.species.upcase %>s</span></h1>
+      <h1 class="mb-1 text-white">Check out these adorable <span class="font-weight-bold"><%= @pets.first.species.capitalize %>s</span></h1>
     </div>
   </div>
 </div>
@@ -16,10 +16,10 @@
 
   <div class="row">
     <% @pets.each do |pet| %>
-    <div class="col-12 col-lg-4">
-      <div class="card mt-1">
+    <div class="col-12 col-lg-4"
+      <div class="card my-3">
         <div class="px-3">
-          <%= cl_image_tag pet.photo, class: "card-img-top pt-3"%>
+          <%= cl_image_tag pet.photo, style: "object-fit: cover;", class: "card-img-top pt-3"%>
           <div>
             <h4 class="pet-name py-3 m-0 font-weight-bold"><%= pet.name %></h4>
             <div class="my-2">
@@ -29,10 +29,8 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-end align-items-center pet-extra-info py-2 px-3">
-          <%= link_to pet_path(pet), class: 'text-primary' do %>
-          <i class="fas fa-info-circle"> More info</i>
-          <% end %>
+        <div class="d-flex justify-content-end align-items-center pet-extra-info pt-2 px-3">
+          <%= link_to "View Details", pet_path(pet), class: 'btn btn-outline-red mb-2'%>
         </div>
       </div>
     </div>
@@ -40,4 +38,5 @@
   </div>
 
 </div>
+
 
