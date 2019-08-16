@@ -65,19 +65,35 @@ User.create!(first_name: "Lorenzo", last_name: "Abc", email: "lorenzo@gmail.com"
 
 puts "User count 2nd time: #{User.count}"
 
-20.times do
+50.times do
   rentor = User.all.sample
   pet = Pet.where.not(user: rentor).sample
-  start_date = Date.new(2019, 8, rand(1..31))
-  end_date = Date.new(2019, 9, rand(1..30))
-  booking = Booking.create!(
-    start_date: start_date,
-    end_date: end_date,
-    user: rentor,
-    pet: pet
+  start_date = Date.new(2019, rand(2..8), rand(1..28))
+  end_date = Date.new(2019, rand(7..12), rand(1..28))
+  unless start_date >= end_date
+    booking = Booking.create!(
+      start_date: start_date,
+      end_date: end_date,
+      user: rentor,
+      pet: pet
+      )
+    booking.total_price = booking.compute_price(pet.price_per_day)
+    booking.save!
+  end
+end
+
+puts "Number of bookings: #{Booking.count}"
+
+puts "Creating reviews"
+
+100.times do
+  booking = Booking.all.sample
+  review = Review.create!(
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat doloribus repellendus odit praesentium soluta, suscipit excepturi ipsa adipisci aliquam, cum laudantium tempora totam possimus, quisquam labore facere a dicta deserunt!",
+    stars: rand(1..5),
+    booking: booking,
+    pet: booking.pet
     )
-  booking.total_price = booking.compute_price(pet.price_per_day)
-  booking.save!
 end
 
 # 20.times do
