@@ -4,11 +4,9 @@ class Pet < ApplicationRecord
 
   # Associations.
   belongs_to :user
-  has_many :bookings
-  # , dependent: :destroy
-  # has_many :users, through: :booking
-  has_many :reviews
-  # , dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :users, through: :booking
+  has_many :reviews, dependent: :destroy
 
 
   # Set up image uploader for pet.

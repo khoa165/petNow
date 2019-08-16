@@ -2,8 +2,8 @@ class Review < ApplicationRecord
   RATINGS = (0..5).to_a
 
   # Associations.
-  belongs_to :booking
   belongs_to :pet
+  belongs_to :booking
 
   # Validations.
   validates :stars, numericality: true, inclusion: {in: RATINGS}
