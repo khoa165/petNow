@@ -67,6 +67,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    raise
     @pet.destroy
     redirect_to pets_path
   end
