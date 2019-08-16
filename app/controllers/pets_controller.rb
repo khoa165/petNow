@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user, only: [:search]
+  skip_before_action :authenticate_user!, only: [:search]
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
