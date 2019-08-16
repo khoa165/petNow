@@ -24,12 +24,12 @@ images = {
   "bunny" => bunnies,
   "fox" => foxs
 }
-
+user_photo = "https://files.slack.com/files-pri/T02NE0241-FMENYK13P/avatar_placeholder.png"
 puts 'Creating users...'
-khoa = User.create!(first_name: "Khoa", last_name: "Le", email: "khoa@gmail.com", password: "khoa123")
-danko = User.create!(first_name: "Danko", last_name: "Beribak", email: "danko@gmail.com", password: "danko123")
-arman = User.create!(first_name: "Arman", last_name: "Balani", email: "arman@gmail.com", password: "arman123")
-melissa = User.create!(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmail.com", password: "melissa123")
+khoa = User.create!(first_name: "Khoa", last_name: "Le", email: "khoa@gmail.com", password: "khoa123", remote_photo_url: user_photo)
+danko = User.create!(first_name: "Danko", last_name: "Beribak", email: "danko@gmail.com", password: "danko123", remote_photo_url: user_photo)
+arman = User.create!(first_name: "Arman", last_name: "Balani", email: "arman@gmail.com", password: "arman123", remote_photo_url: user_photo)
+melissa = User.create!(first_name: "Melissa", last_name: "Lobuescher", email: "melissa@gmail.com", password: "melissa123", remote_photo_url: user_photo)
 pet_owners = [khoa, danko, arman, melissa]
 puts "User count 1st time: #{User.count}"
 
@@ -55,13 +55,13 @@ puts "User count 1st time: #{User.count}"
   end
 end
 
-User.create!(first_name: "Xinyi", last_name: "Abc", email: "xinyi@gmail.com", password: "xinyi123")
-User.create!(first_name: "Ellyn", last_name: "Abc", email: "ellyn@gmail.com", password: "ellyn123")
-User.create!(first_name: "Daniel", last_name: "Abc", email: "daniel@gmail.com", password: "daniel123")
-User.create!(first_name: "Avalon", last_name: "Abc", email: "avalon@gmail.com", password: "avalon123")
-User.create!(first_name: "Gus", last_name: "Abc", email: "gus@gmail.com", password: "gus123")
-User.create!(first_name: "Valerie", last_name: "Abc", email: "valerie@gmail.com", password: "valerie123")
-User.create!(first_name: "Lorenzo", last_name: "Abc", email: "lorenzo@gmail.com", password: "lorenzo123")
+User.create!(first_name: "Xinyi", last_name: "Abc", email: "xinyi@gmail.com", password: "xinyi123", remote_photo_url: user_photo)
+User.create!(first_name: "Ellyn", last_name: "Abc", email: "ellyn@gmail.com", password: "ellyn123", remote_photo_url: user_photo)
+User.create!(first_name: "Daniel", last_name: "Abc", email: "daniel@gmail.com", password: "daniel123", remote_photo_url: user_photo)
+User.create!(first_name: "Avalon", last_name: "Abc", email: "avalon@gmail.com", password: "avalon123", remote_photo_url: user_photo)
+User.create!(first_name: "Gus", last_name: "Abc", email: "gus@gmail.com", password: "gus123", remote_photo_url: user_photo)
+User.create!(first_name: "Valerie", last_name: "Abc", email: "valerie@gmail.com", password: "valerie123", remote_photo_url: user_photo)
+User.create!(first_name: "Lorenzo", last_name: "Abc", email: "lorenzo@gmail.com", password: "lorenzo123", remote_photo_url: user_photo)
 
 puts "User count 2nd time: #{User.count}"
 
