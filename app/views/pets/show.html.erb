@@ -7,9 +7,17 @@
   <div class="row align-items-end">
     <div class="col-12 col-lg-7">
       <h4 class="pet-show-name py-3 m-0 display-4 pl-0"><%= @pet.name.capitalize %></h4>
-      <p class="pet-details">Age: <%= @pet.age %></p>
-      <p class="pet-details">Species: <%= @pet.species.capitalize %></p>
-      <p class="pet-details mb-3">Price per day: <%= @pet.price_per_day %></p>
+      <div class="pet-information">
+        <div>
+          <p class="pet-details">Age: <%= @pet.age %></p>
+          <p class="pet-details">Species: <%= @pet.species.capitalize %></p>
+          <p class="pet-details">Owner: <%= @pet.user.first_name.capitalize %> <%= @pet.user.last_name.capitalize %></p>
+          <p class="pet-details mb-3">Price per day: <%= @pet.price_per_day %></p>
+        </div>
+        <div>
+          <p class="pet-details"><%= @pet.description %></p>
+        </div>
+      </div>
       <% unless @average_rating_rounded.nil? %>
       <% @average_rating_rounded.times do %>
       <i class="fas fa-star"></i>
@@ -30,14 +38,24 @@
       <h4 class="pet-show-name display-4 mb-3">Reviews</h4>
       <% @pet.reviews.each do |review| %>
       <div class="card-trip mb-3">
-        <div class="card-trip-infos">
+        <div class="card-trip-infos pb-2 pl-0">
           <div class="card-user">
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <img src="https://images.unsplash.com/photo-1507682520764-93440a60e9b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1850&q=80" class="card-trip-user avatar-bordered mr-3" />
             <h2><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></h2>
           </div>
         </div>
-            <p><%= review.content %></p>
+        <div class="mb-2">
+          <% unless review.stars.nil? %>
+          <% review.stars.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% leftovers_rating = (5 - review.stars) %>
+          <% leftovers_rating.times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <% end %>
         </div>
+        <p class="pet-details mb-4"><%= review.content %></p>
         <% end %>
       </div>
     </div>
