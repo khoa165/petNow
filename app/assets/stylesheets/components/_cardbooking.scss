@@ -1,6 +1,6 @@
 .card-booking {
   overflow: hidden;
-  height: 140px;
+  height: 160px;
   background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -14,21 +14,35 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  margin-left: 8px;
 }
 
 .card-booking h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
 }
 
 .card-booking p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-left: 8px;
 }
+
+.card-booking a {
+  color: #FF4B4B;
+}
+
+.card-booking a:hover {
+  color: #FF4B4B;
+  text-decoration: none;
+}
+
 
 .card-booking .card-booking-infos {
   padding: 16px;

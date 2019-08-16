@@ -1,17 +1,46 @@
-<div class="booking-card mx-auto my-4 py-3">
-  <div class="row align-items-md-start justify-content-between">
-    <div class="col-md-3 pet-image my-md-4" align="center">
-      <%= cl_image_tag @booking.pet.photo, height: 300, width: 400, crop: :fill %>
-      <!-- <img class="project-img mx-md-4 mx-lg-0" src="images/buddies.svg" alt="project image"> -->
+<div class="container py-5">
+
+  <%= link_to bookings_path do %>
+    <div class="d-flex justify-space-between">
+      <i class="fas fa-arrow-left"></i>
+      <p class="ml-2">back to bookings</p>
     </div>
-    <div class="col-md-9 booking-info mt-4">
-      <div class="mx-4 ml-lg-0">
-        <h3 class="booking-pet">Your new buddy: <%= @booking.pet.name %></h3>
-        <p class="booking-pet-category mt-3">Species: <%= @booking.pet.species %>&emsp;Category: <%= @booking.pet.category %></p>
-        <p class="booking-date mt-3">Start date: <%= @booking.start_date %></p>
-        <p class="booking-date mt-3">End date: <%= @booking.end_date %></p>
-        <p class="booking-date mt-3">Total: <%= @booking.total_price %></p>
-      </div>
+  <% end %>
+  <h1>Your booking of <strong><%= @booking.pet.name.capitalize %></strong></h1>
+  <div class="booking-card d-flex my-4 py-3">
+        <%= cl_image_tag @booking.pet.photo, height: 300, width: 400, crop: :fill, class: "pet-image mx-3" %>
+        <!-- <img class="project-img mx-md-4 mx-lg-0" src="images/buddies.svg" alt="project image"> -->
+    <div class="mx-4 ml-lg-0 booking-info mr-auto">
+      <p class="booking-pet-category">Species: <%= @booking.pet.species %> </p>
+      <p class="booking-pet-category">Category: <%= @booking.pet.category %></p>
+      <p class="booking-date">Start date: <%= @booking.start_date.strftime("%A, %b %d") %></p>
+      <p class="booking-date">End date: <%= @booking.end_date.strftime("%A, %b %d") %></p>
+      <p class="booking-date mt-3">Total Price: <strong><%= @booking.compute_price(@booking.pet.price_per_day) %>€</strong></p>
     </div>
+
+    <div class="d-flex align-self-end px-4 ml-auto">
+          <% if @booking.end_date < Date.today %>
+            <%= link_to new_booking_review_path(@booking), class: 'text-secondary mr-3' do %>
+              <div class="d-flex justify-space-between">
+                <i class="fas fa-star"></i>
+                <p class="ml-1"> Leave a review </p>
+                </div>
+            <% end %>
+          <% end %>
+          <%= link_to edit_booking_path(@booking), class: 'text-secondary mr-3' do %>
+            <div class="d-flex justify-space-between">
+              <i class="fas fa-edit"></i>
+              <p class="ml-1"> Edit booking </p>
+              </div>
+          <% end %>
+          <%= link_to booking_path(@booking), method: :delete, class: 'text-danger mr-3' do %>
+            <div class="d-flex justify-space-between">
+              <i class="fas fa-trash-alt"></i>
+              <p class="ml-1"> Cancel booking </p>
+            </div>
+          <% end %>
+    </div>
+
   </div>
 </div>
+
