@@ -1,26 +1,45 @@
-<div class="banner banner-sm d-flex d-flex flex-column justify-content-center" style="background-image: url('<%= cl_image_path @pet.photo %>');">
+<div class="banner banner-sm d-flex d-flex flex-column justify-content-center" style="background-image: url('<%= cl_image_path @pet.photo %>'); height: 475px;">
 </div>
 
+
+
 <div class="container py-5">
-  <div class="row">
+  <div class="row align-items-end">
     <div class="col-12 col-lg-7">
-      <h4 class="py-3 m-0 font-weight-bold"><%= @pet.name %></h4>
-      <p>Age: <%= @pet.age %></p>
-      <p>Species: <%= @pet.species %></p>
-      <p class="m-0">Price per day: <%= @pet.price_per_day %></p>
+      <h4 class="pet-show-name py-3 m-0 display-4 pl-0"><%= @pet.name.capitalize %></h4>
+      <p class="pet-details">Age: <%= @pet.age %></p>
+      <p class="pet-details">Species: <%= @pet.species.capitalize %></p>
+      <p class="pet-details mb-3">Price per day: <%= @pet.price_per_day %></p>
       <% unless @average_rating_rounded.nil? %>
-        <% @average_rating_rounded.times do %>
-        <i class="fas fa-star"></i>
-        <% end %>
-        <% @leftovers_rating.times do %>
-        <i class="far fa-star"></i>
-        <% end %>
+      <% @average_rating_rounded.times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% @leftovers_rating.times do %>
+      <i class="far fa-star"></i>
+      <% end %>
       <% end %>
     </div>
     <div class="col-12 col-lg-5">
       <% unless @pet.user == current_user %>
       <%= render "bookings/form" %>
       <% end %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12 col-lg-12">
+      <h4 class="pet-show-name display-4 mb-3">Reviews</h4>
+      <% @pet.reviews.each do |review| %>
+      <div class="card-trip mb-3">
+        <div class="card-trip-infos">
+          <div class="card-user">
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <h2><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></h2>
+          </div>
+        </div>
+            <p><%= review.content %></p>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

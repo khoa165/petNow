@@ -1,0 +1,35 @@
+.pet-show-name {
+  font-weight: 500;
+}
+
+.pet-details {
+  font-weight: 400;
+}
+
+.card-trip {
+  width: 100%
+}
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  opacity: .7;
+  margin: 0;
+  font-weight: 400;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-user {
+  display: flex;
+}
