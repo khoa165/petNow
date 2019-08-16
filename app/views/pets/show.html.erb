@@ -26,19 +26,19 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-12 col-lg-7">
+    <div class="col-12 col-lg-12">
       <h4 class="pet-show-name display-4 mb-3">Reviews</h4>
       <% @pet.reviews.each do |review| %>
-      <div class="card-trip">
+      <div class="card-trip mb-3">
         <div class="card-trip-infos">
           <div class="card-user">
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
             <h2><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></h2>
           </div>
-          </div>
+        </div>
             <p><%= review.content %></p>
         </div>
-  <% end %>
+        <% end %>
       </div>
     </div>
   </div>

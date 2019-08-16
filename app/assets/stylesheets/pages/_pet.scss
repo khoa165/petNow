@@ -7,9 +7,6 @@
 }
 
 .card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%
 }
 .card-trip h2 {
@@ -19,9 +16,9 @@
 }
 
 .card-trip p {
-  font-size: 12px;
   opacity: .7;
   margin: 0;
+  font-weight: 400;
 }
 
 
