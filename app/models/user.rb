@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
+  # Set up image uploader for pet.
+  mount_uploader :photo, PhotoUploader
+
   # Devise features.
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
