@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:search]
+
+  skip_before_action :authenticate_user!, only: [:search, :show]
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -13,7 +14,7 @@ class PetsController < ApplicationController
 
     species_query = params[:species]
     if species_query.present?
-      @pets = @pets.where("species ILIKE ?", "%#{species_query}%")
+      @pets = @pets.where("species ILIKE ?", "%#{species_query}%").limit(20)
     end
 
 
