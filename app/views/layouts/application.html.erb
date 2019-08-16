@@ -10,17 +10,19 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
   </head>
   <body>
-    <!-- Navbar -->
-    <% if params[:controller] == "pages" || (params[:controller] == "pets" && (params[:action] == "index" || params[:action] == "search")) %>
-      <%= render 'shared/navbar' %>
-    <% else %>
-      <%= render 'shared/basic_navbar' %>
-    <% end %>
+    <div class="main">
+      <!-- Navbar -->
+      <% if params[:controller] == "pages" || (params[:controller] == "pets" && (params[:action] == "index" || params[:action] == "search")) %>
+        <%= render 'shared/navbar' %>
+      <% else %>
+        <%= render 'shared/basic_navbar' %>
+      <% end %>
 
-    <!-- Flashes -->
-    <%= render 'shared/flashes' %>
+      <!-- Flashes -->
+      <%= render 'shared/flashes' %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
     <!-- Footer -->
     <% if params[:controller] == "pages" %>
